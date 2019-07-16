@@ -7,8 +7,11 @@ import threading
 HEIGHT = 700
 WIDTH = 800
 
+#Remember to change your key here!!!
+key = open('C:/Users/RistoMatti/Documents/Python_projects/APIs/apixu_key.txt', 'r').read()
+
 def getWeather(city):
-    url = f'http://api.apixu.com/v1/forecast.json?key=286dd8a8f7c64f229c360408190805&q={city}&days=5'
+    url = f'http://api.apixu.com/v1/forecast.json?key={key}&q={city}&days=5'
     response = requests.get(url)
     label['text'] = formatWeather(response.json())
 
